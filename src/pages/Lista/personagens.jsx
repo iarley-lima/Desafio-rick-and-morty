@@ -3,7 +3,7 @@ import Footer from "../../../Footer/Footer";
 import styles from "./personagens.module.css";
 import Cards from "../../../components/Cards";
 
-function Personagens() {
+function personagens() {
     return (
         <> 
             <Header />
@@ -18,4 +18,4 @@ function Personagens() {
     );
 }
 
-export default Personagens;
+export default personagens;

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Personagens from "./pages/Home/Lista/Personagens";
+import personagens from "./pages/Home/Lista/personagens";
 import Home from "./pages/Home";
 
 function AppRoutes() {
