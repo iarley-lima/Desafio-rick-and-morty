@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Personagens from "./pages/Home/Lista/Personagens";
+import Personagens from "./pages/Home/Lista/Personagens.jsx";
 import Home from "./pages/Home";
 
 function AppRoutes() {
@@ -7,7 +7,7 @@ function AppRoutes() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />}></Route>
-                <Route path="/Personagens" element={<Personagens />}></Route>
+                <Route path="/personagens" element={<Personagens />}></Route>
             </Routes>
         </BrowserRouter>
     );

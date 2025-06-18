@@ -1,6 +1,6 @@
 import Header from "../../../components/Header/header";
 import Footer from "../../../Footer/Footer";
-import styles from "./Personagens.module.css";
+import styles from "./personagens.module.css";
 import Cards from "../../../components/Cards";
 
 function Personagens() {
