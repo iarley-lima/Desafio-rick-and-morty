@@ -1,5 +1,5 @@
-import Footer from '../../Footer/Footer.js';
-import Header from '../../components/Header/header.js';
+import Footer from '../../Footer/Footer.jsx';
+import Header from '../../components/Header/header.jsx';
 
 function Home() {
   return (
