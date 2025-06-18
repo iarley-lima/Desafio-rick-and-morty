@@ -1,7 +1,8 @@
-import Header from "../../../components/Header/header";
-import Footer from "../../../Footer/Footer";
+import Header from "@/components/Header/HeaderComponent";
+import Footer from "@/Footer/Footer";
 import styles from "./personagens.module.css";
-import Cards from "../../../components/Cards";
+import Cards from "@/components/Cards";
+
 
 function personagens() {
     return (

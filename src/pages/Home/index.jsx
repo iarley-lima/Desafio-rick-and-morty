@@ -1,5 +1,5 @@
-import Footer from '../../Footer/Footer';
-import Header from '../../../components/components/Header/Header';
+import Header from "@/components/Header/HeaderComponent";
+import Footer from "@/Footer/Footer";
 
 function Home() {
   return (
