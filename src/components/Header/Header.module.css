@@ -1,6 +1,8 @@
 
 body{
     background-color: #1d2121; 
+    margin: 0;
+    overflow: hidden;
 }
 /* Cabeçalho*/
 .Header {
@@ -18,7 +20,7 @@ body{
 
 .Header span {
     font-size: 2rem;
-    color:#9FA6A8;
+    color:#3FE38C;
     font-weight: 500;
     margin-left: 35px;
 }
@@ -26,7 +28,7 @@ body{
 
 .Header a{
     text-decoration: none;
-    color:aliceblue;
+    color:#3FE38C;
     padding-inline: 0.5rem;
     font-size: 1.5rem;
 }

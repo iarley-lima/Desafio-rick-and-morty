@@ -1,20 +1,14 @@
 import Header from "@/components/Header/HeaderComponent";
 import Footer from "@/Footer/Footer";
-import styles from "./personagens.module.css";
-import Cards from "@/components/Cards";
+import Cards from "@/pages/Cards";
 
 
 function personagens() {
     return (
         <> 
             <Header />
-            <section className={styles.personagens}>
-                <h1>personagens aqui</h1>
-                <p>exemplo apenas com um personagem</p>
-            </section>
             <Footer />
             <Cards />
-
         </>
     );
 }
