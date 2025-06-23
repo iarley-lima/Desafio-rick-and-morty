@@ -5,17 +5,17 @@ import { Box, Text, Image } from '@chakra-ui/react';
 function Home() {
   return (
     <>
-      <Header />
       <Box
       bg="black"
       minH="100vh"
       color="#ffffff"
+      pt="150px"
+      overflow="hidden"
       textAlign="center"
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="flex-start"
-      pt="300px"
       >
 
       <Image
