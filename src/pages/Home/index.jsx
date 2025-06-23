@@ -17,13 +17,14 @@ function Home() {
       alignItems="center"
       justifyContent="flex-start"
       >
-
+      {/* Logo rick and morty da tela inicial */}
       <Image
         src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19643055883023.5996f8afa3a8f.gif"
         alt="Rick and Morty Logo"
         mb={4} 
       />
-
+      
+      {/* titulo de boas vindas */}
       <Text fontSize="60px" fontWeight="bold" color="#3FE38C">
         Seja bem vindo ao segundo desafio!
       </Text>

@@ -1,13 +1,15 @@
-import { Box, Image, Heading, Spinner, SimpleGrid, Text, Button, Flex, Input, Center } from "@chakra-ui/react";
-import axios from "axios";
+import { Box, Image, Heading, Spinner, SimpleGrid, Button, Flex, Input, Center } from "@chakra-ui/react";
+import axios from "axios"; 
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 
 function Cards() {
-  const [personagens, setPersonagens] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [busca, setBusca] = useState("");
-//----------------- axios e API --------------------
+  // estados do componente
+  const [personagens, setPersonagens] = useState([]); 
+  const [loading, setLoading] = useState(true); 
+  const [busca, setBusca] = useState(""); 
+
+  // ------------------------ solicitando a API ------------------------
   useEffect(() => {
     axios
       .get(
@@ -15,15 +17,15 @@ function Cards() {
       )
       .then((res) => {
         setPersonagens(res.data);
-        setLoading(false);
+        setLoading(false);       
       })
       .catch((err) => {
         console.error("Erro ao buscar personagens:", err);
-        setLoading(false);
+        setLoading(false); 
       });
   }, []);
 
- 
+  // ------------------------ Tela de Carregamento ------------------------
   if (loading) {
     return (
       <Center h="100vh" bg="gray.900">
@@ -31,51 +33,61 @@ function Cards() {
       </Center>
     );
   }
-  
-//------------------------ barra de pesquisa --------------------------
+
+  // ---------------------- Renderização da Tela ------------------------
   return (
-    <Box bg="gray.900" color="white" py={10} minH="100vh" px={{ base: 4, md: 10 }}>
+    <Box
+      bg="gray.900"      
+      color="white"         
+      py={10}              
+      minH="100vh"          
+      px={{ base: 4, md: 10 }} 
+    >
+      {/* ------------------------ Barra de Pesquisa ------------------- */}
       <Flex justify="center" mb={6}>
         <Input
           placeholder="Pesquisar personagem..."
           value={busca}
-          onChange={(e) => setBusca(e.target.value)}
+          onChange={(e) => setBusca(e.target.value)} 
           bg="white"
           color="black"
           maxW="400px"
-          w="100%"
+          w="100%" 
         />
       </Flex>
 
+      {/* -------------------- Lista de Personagens ------------------------ */}
       <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={8}>
         {personagens
           .filter((p) =>
-            p.name.toLowerCase().includes(busca.toLowerCase())
+            p.name.toLowerCase().includes(busca.toLowerCase()) 
           )
           .map((personagem) => (
             <Box
-              key={personagem.id}
-              bg="white"
+              key={personagem.id}        
+              bg="white"                 
               color="black"
-              p={5}
-              borderRadius="md"
-              boxShadow="lg"
-              maxW="300px"
-              mx="auto"
-              textAlign="center"
+              p={5}                       
+              borderRadius="md"          
+              boxShadow="lg"            
+              maxW="300px"               
+              mx="auto"                  
+              textAlign="center"         
             >
               <Image
                 src={personagem.image}
-                alt={`Foto de ${personagem.name}`}
+                alt={`Foto de ${personagem.name}`} 
                 borderRadius="xl"
                 objectFit="cover"
                 mx="auto"
                 mb={4}
               />
+
               <Heading fontSize="lg" mb={2}>
                 {personagem.name}
               </Heading>
 
+              {/* Botão que leva pra página de detalhes */}
               <Link to={`/personagem/${personagem.id}`}>
                 <Button size="sm" colorScheme="green" mt={2}>
                   Ler mais

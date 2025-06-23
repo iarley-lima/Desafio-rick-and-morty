@@ -1,18 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  Box,
-  Image,
-  Text,
-  Spinner,
-  VStack,
-  Heading,
-  Tag,
-  Stack,
-  Flex
-} from "@chakra-ui/react";
+import { Box, Image, Text, Spinner, VStack, Heading, Tag, Stack, Flex } from "@chakra-ui/react";
 
-// Tradução das informações dos personagens
+//---------------------- Tradução das informações dos personagens -----------------------------
 const statusPt = {
   Alive: 'Vivo',
   Dead: 'Morto',
@@ -44,6 +34,7 @@ function Detalhes() {
   const [loading, setLoading] = useState(true);
   const [episodes, setEpisodes] = useState([]);
 
+   // ---------------------- solicitando a API pra buscar personagens e episódios ----------------------
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((res) => res.json())
@@ -51,7 +42,8 @@ function Detalhes() {
         setCharacter(data);
         setLoading(false);
 
-        const episodeUrls = data.episode.slice(0, 5); 
+        // Pega os 5 primeiros episódios do personagem
+        const episodeUrls = data.episode.slice(0, 5);
         Promise.all(
           episodeUrls.map((url) =>
             fetch(url).then((res) => res.json())
@@ -60,13 +52,23 @@ function Detalhes() {
       });
   }, [id]);
 
+  // ---------------------- Tela de carregamento enquanto busca dados ----------------------
   if (loading) {
     return <Spinner size="xl" color="green.400" />;
   }
 
+  // ---------------------- detalhes do personagem na pagina de detalhes ----------------------
   return (
     <Flex justify="center" align="center" minH="100vh" bg="gray.900" color="white">
-      <Box p="6" maxW="400px" mx="auto" borderWidth="1px" borderRadius="lg" boxShadow="md" bg="gray.800">
+      <Box
+        p="6"
+        maxW="400px"
+        mx="auto"
+        borderWidth="1px"
+        borderRadius="lg"
+        boxShadow="md"
+        bg="gray.800"
+      >
         <VStack spacing={4}>
           <Image
             src={character.image}
@@ -74,17 +76,28 @@ function Detalhes() {
             borderRadius="md"
             boxShadow="md"
           />
-          <Heading size="md" textAlign="center">{character.name}</Heading>
+          <Heading size="md" textAlign="center">
+            {character.name}
+          </Heading>
 
+          {/* Tags com status, espécie e gênero traduzidos */}
           <Stack direction="row" spacing={2}>
-            <Tag colorScheme="purple">{statusPt[character.status] || character.status}</Tag>
-            <Tag colorScheme="green">{especiePt[character.species] || character.species}</Tag>
-            <Tag colorScheme="blue">{generoPt[character.gender] || character.gender}</Tag>
+            <Tag colorScheme="purple">
+              {statusPt[character.status] || character.status}
+            </Tag>
+            <Tag colorScheme="green">
+              {especiePt[character.species] || character.species}
+            </Tag>
+            <Tag colorScheme="blue">
+              {generoPt[character.gender] || character.gender}
+            </Tag>
           </Stack>
 
+          {/* Informações de origem e localização */}
           <Text><strong>Origem:</strong> {character.origin.name}</Text>
           <Text><strong>Localização:</strong> {character.location.name}</Text>
 
+          {/* Lista dos episódios que o personagem apareceu */}
           <Box pt={2} w="100%">
             <Heading size="sm" mb={1}>Episódios</Heading>
             <ul style={{ paddingLeft: "20px" }}>

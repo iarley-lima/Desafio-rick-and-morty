@@ -3,6 +3,7 @@ body{
     background-color: #1d2121; 
     margin: 0;
 }
+
 /* Cabeçalho*/
 .Header {
     background-color: #000000;
@@ -32,14 +33,3 @@ body{
     font-size: 1.5rem;
 }
 
-/* Introdução ao usuário */
-
-.container {
-  margin-top: 60px; 
-  height: calc(100vh - 60px); 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}

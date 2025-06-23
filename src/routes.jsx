@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Cards from "./pages/Cards";
-import Detalhes from "./pages/detalhes/index";
+import Detalhes from "./pages/Detalhes/index";
 
+//rotas pras páginas do cabeçalho e dos cards
 function AppRoutes() {
     return (
         <Routes>
