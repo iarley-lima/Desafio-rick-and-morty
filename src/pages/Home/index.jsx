@@ -30,7 +30,7 @@ function Home() {
             
       <Text fontSize="20px" color="#ffff">
         Aqui você vai conhecer um pouco 
-        sobre os personagens da série america Rick and Morty.
+        sobre os personagens da série americana Rick and Morty.
       </Text>
 
       </Box>
