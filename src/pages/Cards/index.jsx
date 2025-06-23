@@ -23,7 +23,7 @@ function Cards() {
       });
   }, []);
 
-  //------------------------- responsividade ------------------------------
+ 
   if (loading) {
     return (
       <Center h="100vh" bg="gray.900">
