@@ -4,7 +4,7 @@ import AppRoutes from '././routes/routes';
 import Header from './components/Header/HeaderComponent';
 
 // ChakraProvider deixa todos os componentes com o visual do Chakra UI
-function App() {
+function app() {
   return (
     <ChakraProvider>
         <Header />
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default app;
