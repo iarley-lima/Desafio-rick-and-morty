@@ -4,7 +4,7 @@ import Cards from "../pages/Cards";
 import Detalhes from "../pages/Detalhes/index";
 
 //rotas pras páginas do cabeçalho e dos cards
-function AppRoutes() {
+function appRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Home />}></Route>
@@ -14,4 +14,4 @@ function AppRoutes() {
     );
 }
 
-export default AppRoutes;
+export default appRoutes;
