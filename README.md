@@ -10,7 +10,32 @@ O objetivo principal é desenvolver uma aplicação que consuma dados da [API de
 
 Este é o segundo desafio Frontend proposto pela empresa Gestão Maker, e consiste basicamente em um site que lista e descreve os personagens da série Rick and Morty. A interface deve ser moderna, responsiva e intuitiva, utilizando [Chakra UI](https://chakra-ui.com/) para estilização.
 
----
+## Tecnologias Utilizadas
+- ReactJS
+- React Router DOM
+- Axios
+- Chakra UI
+- Rick and Morty API
+
+## Como rodar o projeto localmente
+```bash
+git clone https://github.com/seu-user/seu-repo.git
+cd seu-repo
+npm install
+npm start
+```
+
+## Link da aplicação publicada no Vercel
+https://desafio-rick-and-morty-yf5c.vercel.app
+
+## Funcionalidades
+- Listagem de personagens com paginação
+- Busca por nome
+- Página de detalhes dos personagens
+- Navegação com React Router
+- Estilização com Chakra UI
+- Feedback visual em buscas sem resultado
+- Deploy na Vercel
 
 # Primeiros Passos com Create React App
 

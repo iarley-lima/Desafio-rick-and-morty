@@ -1,11 +1,23 @@
-import styles from "./Footer.module.css";
+import { Box, Heading } from "@chakra-ui/react";
 
-export default function Footer () {
-    return (
-        <footer className={styles.Footer}>
-            <h2>Desafio 2 &copy; Desenvolvido por Iarley Lima 2025</h2>
-        </footer>
-    );
+const Footer = () => {
+  return (
+    <Box
+      width="100%"
+      position="fixed"
+      bottom="0"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      bg="black"
+      color="#9FA6A8"
+      padding="0.5rem"
+    >
+      <Heading as="h2" fontSize="1rem" fontWeight="500">
+        Desafio 2 &copy; Desenvolvido por Iarley Lima 2025
+      </Heading>
+    </Box>
+  );
+};
 
-}
-
+export default Footer;
